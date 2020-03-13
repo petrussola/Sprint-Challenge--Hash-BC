@@ -32,6 +32,7 @@ Explain in detail the workings of a dynamic array:
 - Remove from the back - O(1) - we just need to make the last item available for anyone else that needs space in memory and that it is.
 
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
+- Worst case scenario when extending the size of an array is that there is no contiguous free space left at the end of the array, so we need to find new contiguous space in memory to fit the size of the array that we want. In that case, we need to save the items in the old array into the new array, hence why it is O(n).
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
  
