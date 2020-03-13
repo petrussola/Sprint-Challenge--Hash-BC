@@ -24,6 +24,13 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
+
+- Acces an array - O(1)
+- Add from the front - O(n) -> we always have to traverse the array: if there is space at the end, we need to shift all items by one position. If there isn't, we need to save the array somewhere else in memory which means we need to traverse anyway.
+- Remove from the front - O(n) -> all items need to be shifted one space forward when we delete the first item, so we need to traverse the array, therefore it is O(n.)
+- Add from the back - worst case O(n), average case O(1) - it depends whether there is space free at the end of the array. Python implementation of an array (List) allocate few extra spaces at the end of the array every time we add items (dependant on the load factor). The amount of free spaces added increase over time, so having to find a new space in memory to save the array happens less and less frequently. When there is space available at the end of the array, it is O(1). When there isn't, it is O(n).
+- Remove from the back - O(1) - we just need to make the last item available for anyone else that needs space in memory and that it is.
+
 * What is the worse case scenario if you try to extend the storage size of a dynamic array?
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
