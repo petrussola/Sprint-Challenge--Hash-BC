@@ -35,6 +35,7 @@ Explain in detail the workings of a dynamic array:
 - Worst case scenario when extending the size of an array is that there is no contiguous free space left at the end of the array, so we need to find new contiguous space in memory to fit the size of the array that we want. In that case, we need to save the items in the old array into the new array, hence why it is O(n).
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+- A block chain is a chain of blocks. It starts with a genesis block, and the next block contains the hash of the previous block. That second block is hashed, and added to the field "previous hash" of the third block and so on. Each block contains a number of transations, and data related to these transactions: amount, etc. Each block contains a proof. What is a proof? A proof is a number that, when hashed together with the previous block, the proof of work (POW) is reached. Proof of Work is the challenge that blockchain owners set in order to allow miners to create a block. You can only create a block if you ahve passed POW (currently, you need to find a hash that has 17 leading zeros - in other words, you need to find the number that, when hashed with the previous block, it has the 17 leading zeros). Blockchain is a class with attributes, each attribute being a property of the block: amount, transactions, etc.
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
 
