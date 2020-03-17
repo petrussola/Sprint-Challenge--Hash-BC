@@ -20,4 +20,19 @@ def reconstruct_trip(tickets, length):
     YOUR CODE HERE
     """
 
-    pass
+    for el in tickets:
+        hash_table_insert(hashtable, el.source, el.destination)
+
+    first = hash_table_retrieve(hashtable, "NONE")
+    route[0] = first
+    index = 0
+    insert = 1
+    while insert < length:
+        route[insert] = hash_table_retrieve(hashtable, route[index])
+        index += 1
+        insert += 1
+    return route[:-1]
+
+    # for i in range(length):
+
+    print(route, "<<< route")
